@@ -1,7 +1,8 @@
 /* Общий стиль страницы */
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #0C1C4D;
   color: white;
   overflow-x: hidden;
@@ -204,7 +205,7 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #0C1C4D;
   color: white;
   overflow-x: hidden;
@@ -291,7 +292,16 @@ body {
   width: 100%;
   height: 100%;
 }
-
 .card-cover {
   border-radius: 16px;
+}
+.csvo-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;  /* Выравнивание текста по левому краю */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 20px; /* Отступ от верхнего края */
+  left: 40px; /* Отступ от левого края */
+  z-index: 2; /* Для того, чтобы он был поверх других элементов */
 }
