@@ -1,0 +1,307 @@
+/* Общий стиль страницы */
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0C1C4D;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Верхняя навигация */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 30px; /* верхний отступ у меню */
+  padding-bottom: 0;  /* убираем лишний отступ снизу */
+  font-size: 16px;
+  z-index: 2;
+  position: relative;
+}
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #7FCDF4;
+  transition: width 0.3s ease;
+}
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Заголовок */
+.page-title {
+  text-align: center;
+  font-size: 48px;
+  margin: 50px 0; /* вот тут и создаётся симметрия */
+  z-index: 2;
+  position: relative;
+}
+
+
+/* Секция с карточками */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 0 20px 60px; /* верх убрали — расстояние уже есть за счёт .page-title */
+  position: relative;
+  z-index: 2;
+}
+
+/* Обёртка карточки */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Плашка над карточкой */
+.card-label {
+  background-color: #4ea5d0; /* ← Цвет фона плашки — МЕНЯТЬ ЗДЕСЬ */
+  color: white;
+  padding: 10px 32px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Карточка */
+.card {
+  background-color: white;
+  color: #0C1C4D;
+  border-radius: 20px;
+  width: 320px;
+  height: 320px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(127, 205, 244, 0.25);
+}
+/* Содержимое карточки */
+.card h2 {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+}
+.card .date {
+  color: #7FCDF4;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.card .summary {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.card .stat {
+  font-size: 18px;
+  font-weight: bold;
+  color: #264ECA;
+  text-align: right;
+}
+
+/* Кнопка */
+.download-btn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  background-color: #7FCDF4;
+  color: #0C1C4D;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+.download-btn:hover {
+  background-color: #5ABBE0;
+}
+
+/* Подпись снизу */
+.release-label {
+  text-align: center;
+  margin-top: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Фигуры фона */
+.bg-shapes .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  /* animation: float 8s ease-in-out infinite;  <-- УБРАЛ ЭТУ СТРОКУ */
+  z-index: 0;
+}
+.shape.orange {
+  background-color: #FF7A2F;
+}
+.shape.blue {
+  background-color: #7FCDF4;
+}
+.shape {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+}
+.shape.small {
+  width: 100px;
+  height: 100px;
+  bottom: 100px;
+  left: 50px;
+}
+.shape.mid {
+  width: 120px;
+  height: 120px;
+  top: 200px;
+  left: 30%;
+}
+.shape.mini {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 60%;
+}
+
+/* Анимации */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0C1C4D;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  z-index: 0;
+  filter: blur(3px); /* немного размытости */
+}
+
+.shape.orange {
+  background-color: #FF7A2F;
+}
+
+.shape.blue {
+  background-color: #7FCDF4;
+}
+
+.shape.deepblue {
+  background-color: #264ECA;
+}
+
+/* Нижняя волна — более размытой и ниже */
+.wave-bottom {
+  position: absolute;
+  bottom: -40px; /* Чуть ниже */
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+  opacity: 0.2;
+  filter: blur(10px); /* добавили размытие */
+}
+
+.wave-bottom svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-top-right-blur {
+  position: absolute;
+  top: -100px;       /* чуть выше */
+  right: -100px;     /* чуть правее */
+  width: 520px;      /* увеличили ширину */
+  height: 280px;     /* увеличили высоту */
+  opacity: 0.4;      /* ярче (было 0.25) */
+  z-index: 0;
+  filter: blur(10px); /* мягкое размытие */
+}
+
+.wave-top-right-blur svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-bottom-blur {
+  position: absolute;
+  bottom: -100px;    /* было 0 — теперь опущена ниже */
+  left: 0;
+  width: 100%;
+  height: 200px;
+  opacity: 0.3;
+  filter: blur(30px); /* усилено размытие */
+  z-index: 0;
+}
+.wave-bottom-blur svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.card-cover {
+  border-radius: 16px;
+}
+.csvo-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;  /* Выравнивание текста по левому краю */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 20px; /* Отступ от верхнего края */
+  left: 40px; /* Отступ от левого края */
+  z-index: 2; /* Для того, чтобы он был поверх других элементов */
+}
